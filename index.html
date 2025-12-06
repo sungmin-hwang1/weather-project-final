@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>날씨 예보 프로젝트</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app" class="app">
+
+    <h1>날씨 예보</h1>
+
+    <div class="search-area">
+      <input id="cityInput" type="text" placeholder="도시 이름 입력" />
+      <button id="searchBtn">검색</button>
+    </div>
+
+    <div class="unit-area">
+      <button id="celsiusBtn" class="active">℃</button>
+      <button id="fahrenheitBtn">℉</button>
+    </div>
+
+    <p id="errorMessage" class="error"></p>
+
+    <!-- 현재 날씨 -->
+    <div id="currentWeather" hidden>
+      <h2 id="cityName"></h2>
+      <p id="localTime"></p>
+
+      <div class="weather-main">
+        <img id="icon" />
+        <p id="temp" class="temp"></p>
+        <p id="description"></p>
+      </div>
+
+      <p>체감: <span id="feelsLike"></span></p>
+      <p>습도: <span id="humidity"></span></p>
+      <p>풍속: <span id="wind"></span></p>
+
+      <p class="outfit" id="outfit"></p>
+    </div>
+
+    <!-- 예보 -->
+    <div id="forecastSection" hidden>
+      <h2>3일 예보</h2>
+      <div id="forecastList" class="forecast"></div>
+    </div>
+
+    <!-- 최근 검색어 -->
+    <div id="recentSearches" class="recent-searches"></div>
+
+    <p class="source">데이터 제공: OpenWeather</p>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
